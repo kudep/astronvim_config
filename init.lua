@@ -25,14 +25,19 @@ local config = {
   mappings = {
     -- first key is the mode
     n = {
+      -- DiffView
       ["<leader>do"] = { ":DiffviewOpen ", desc = "Show diff of two hashes of commits" },
       ["<leader>dh"] = { "<cmd>DiffviewFileHistory<cr>", desc = "Show history of commmits" },
-      ["<leader>bb"] = { "<cmd>tabnew<cr>", desc = "New tab" },
-      ["<leader>bc"] = { "<cmd>BufferLinePickClose<cr>", desc = "Pick to close" },
+      -- Tabs & buffers
+      ["<leader>Bn"] = { "<cmd>tabnew<cr>", desc = "Open new tab" },
+      ["<leader>Bc"] = { "<cmd>tabclose<cr>", desc = "Close current tab" },
       ["<leader>bj"] = { "<cmd>BufferLinePick<cr>", desc = "Pick to jump" },
       ["<leader>bt"] = { "<cmd>BufferLineSortByTabs<cr>", desc = "Sort by tabs" },
-      ["<leader>n"] = { "<cmd>noh<cr>", desc = "Stop the highlighting for the 'hlsearch' option." },
+      -- Telescope
       ["<leader>fr"] = { "<cmd>Telescope resume<cr>", desc = "Resume last search in Telescope" },
+      -- Replacing
+      ["<leader>rr"] = { ":%s/<C-r>\"//gc<left><left><left>", desc = "Replace in current file with confirmation" },
+      ["<leader>rR"] = { ":%s/<C-r>\"//g<left><left>", desc = "Replace in current file" },
     },
   },
 
@@ -70,6 +75,8 @@ local config = {
         ["<leader>"] = {
           ["d"] = { name = "DiffView" },
           ["b"] = { name = "Buffer" },
+          ["B"] = { name = "Tabs" },
+          ["r"] = { name = "Replacing" },
         },
       },
     },
