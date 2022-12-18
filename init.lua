@@ -1,3 +1,5 @@
+vim.opt.clipboard = ""
+vim.opt.foldmethod = "indent"
 local config = {
   colorscheme = "default_theme",
   -- Set dashboard header
@@ -39,6 +41,11 @@ local config = {
       ["<leader>rr"] = { ":%s/<C-r>\"//gc<left><left><left>", desc = "Replace in current file with confirmation" },
       ["<leader>rR"] = { ":%s/<C-r>\"//g<left><left>", desc = "Replace in current file" },
     },
+    v = {
+      -- Replacing
+      ["<leader>rr"] = { ":%s/<C-r>\"//gc<left><left><left>", desc = "Replace in current file with confirmation" },
+      ["<leader>rR"] = { ":%s/<C-r>\"//g<left><left>", desc = "Replace in current file" },
+    }
   },
 
 
